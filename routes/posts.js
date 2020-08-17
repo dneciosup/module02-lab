@@ -13,6 +13,7 @@ module.exports = {
     res.status(200).send(store.posts[req.params.id])
   },
   removePost(req, res) {
+    store.posts[req.params.id].comments.splice(req.params.commentId)
     store.posts.splice(req.params.id, 1)
     res.status(204).send()
   }
